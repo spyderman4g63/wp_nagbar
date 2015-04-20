@@ -25,7 +25,7 @@
      Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
  function nagbar_main() {
-     echo '<div id="nagbar">This is inserted at the bottom <a class="close"></a></div>';
+     echo '<div id="nagbar">This is inserted at the bottom <a class="close" onclick="jQuery(\'#nagbar\').fadeOut();"></a></div>';
  }
  add_action('wp_footer', 'nagbar_main');
 
