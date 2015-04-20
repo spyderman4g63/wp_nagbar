@@ -1,0 +1,26 @@
+#nagbar{
+  background-color: #FF8C00;
+  border-bottom: 2px solid #ba6300;
+  width: 100% height:.8em;
+  position: absolute;
+  top: 30px;
+  width: 100%;
+  min-height: 1em;
+  padding:.2em;
+  text-align:center;
+}
+#nagbar a.close{
+  position: absolute;
+  right:1em;
+  top:.4em;
+  background-image:url(../images/glyphicons-193-circle-remove.png);
+  background-repeat:no-repeat;
+  border-radius: 50%;
+  width:25px;
+  height:25px;
+  opacity:.2;
+}
+
+#nagbar a.close:hover{
+  opacity:.6;
+}

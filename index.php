@@ -25,7 +25,7 @@
      Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
  function nagbar_main() {
-     echo '<div id="nagbar_container">This is inserted at the bottom</div>';
+     echo '<div id="nagbar">This is inserted at the bottom <a class="close"></a></div>';
  }
  add_action('wp_footer', 'nagbar_main');
 
@@ -34,6 +34,6 @@
  add_action( 'wp_enqueue_scripts', 'register_plugin_styles' );
 
  function register_plugin_styles() {
- 	wp_register_style( 'nagbar', plugins_url( 'nagbar/test.css' ) );
+ 	wp_register_style( 'nagbar', plugins_url( 'nagbar/css/style.css' ) );
  	wp_enqueue_style( 'nagbar' );
  }
