@@ -25,7 +25,7 @@
      Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
  function nagbar_main() {
-     echo '<div id="nagbar">This is inserted at the bottom <a class="close" onclick="jQuery(\'#nagbar\').fadeOut();"></a></div>';
+     echo '<div id="nagbar"><div class="nagbar_content">Check out this totally cool thing</div> <a class="close" onclick="jQuery(\'#nagbar\').slideUp();"></a></div>';
  }
  add_action('wp_footer', 'nagbar_main');
 
@@ -36,4 +36,19 @@
  function register_plugin_styles() {
  	wp_register_style( 'nagbar', plugins_url( 'nagbar/css/style.css' ) );
  	wp_enqueue_style( 'nagbar' );
+ }
+
+ // admin page settings
+
+ add_action( 'admin_init', 'nagbar_settings' );
+ function nagbar_settings() {
+   register_setting( 'nagbar-settings-group', 'content' );
+ }
+
+ add_action( 'admin_menu', 'nagbar_menu_page' );
+
+ function nagbar_menu_page() {
+
+ 	add_menu_page( 'Nagbar Settings', 'Nagbar', 'manage_options', 'nagbar/admin.php', '', plugins_url( 'nagbar/images/icon.png' ) );
+
  }
